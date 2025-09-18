@@ -3,8 +3,8 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main  # 저장소 메인 브랜치 이름 확인 후 맞게 바꿔주세요
-
+      - main
+      
 jobs:
   deploy:
     runs-on: ubuntu-latest
