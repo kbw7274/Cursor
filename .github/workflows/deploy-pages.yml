@@ -3,27 +3,27 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main # 또는 master. 오빠 저장소의 메인 브랜치 이름에 맞춰주세요!
+      - main  # 저장소 메인 브랜치 이름 확인 후 맞게 바꿔주세요
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read # 이 부분은 write가 아닌 read로 변경하는 것이 최신 관례입니다.
+      contents: read
       pages: write
       id-token: write
 
     steps:
-      - name: Checkout your repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: . # 이 폴더 아래의 모든 파일(예: Total_Web_guide.html)을 업로드합니다.
+          path: .  # 루트 폴더의 모든 파일 업로드
 
       - name: Deploy to GitHub Pages
         id: deployment
